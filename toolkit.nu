@@ -2,8 +2,8 @@ use std log
 
 # Build absblack refind theme by doing:
 export def build [
-  big: int = 256,
-  small: int = 64
+  big: int = 120 # big icons' size
+  small: int = 32 # small icons' size
 ] {
   mkdir absblack/res/
   cp src/theme.conf absblack/theme.conf

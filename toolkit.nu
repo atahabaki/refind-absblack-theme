@@ -38,7 +38,7 @@ export def install [
     sudo cp -r absblack $"($refind_dir)/"
     log info $"./absblack copied to ($refind_dir)"
     if not ($refind_conf_contents | str contains 'include absblack/theme.conf') {
-      sudo echo "\ninclude absblack/theme.conf\n" >> $refind_conf
+      sudo nu -c $"echo \"\ninclude absblack/theme.conf\n\" | save -af ($refind_conf)"
       log info $"appended \"include absblack/theme.conf\" to ($refind_conf)"
     }
   }
@@ -56,13 +56,13 @@ export def uninstall [
   let absblack_dir = $refind_dir | path join "absblack"
   log info $"absblack installed at ($absblack_dir)"
   if ($simulate) {
-    log info $"remove dir ($refind_dir)"
+    log info $"remove dir ($absblack_dir)"
     log info $"stripping \"include absblack/theme.conf\" from ($refind_conf)"
   } else {
-    sudo rm -rf absblack $"($refind_dir)/"
-    log info $"remove dir ($refind_dir)"
+    sudo rm -rf $absblack_dir
+    log info $"remove dir ($absblack_dir)"
     if not ($refind_conf_contents | str contains 'include absblack/theme.conf') {
-      sudo sed -Ei 's/include absblack\/theme.conf//g' $refind_conf
+      sudo sed -Ei 's#include absblack/theme.conf##g' $refind_conf
       log info $"stripping \"include absblack/theme.conf\" from ($refind_conf)"
     }
   }

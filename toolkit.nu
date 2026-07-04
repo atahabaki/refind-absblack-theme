@@ -10,10 +10,12 @@ export def build [
   ls src/res/big/*.svg | each { |svg_file|
     let file_name_wo_ext = $svg_file.name | path parse | get stem;
     inkscape --export-png-color-mode=RGBA_8 --export-png-compression=0 -w $big -h $big $"--export-filename=absblack/res/($file_name_wo_ext).png" $svg_file.name
+    log info $"exported src/res/big/($svg_file.name) to absblack/res/($file_name_wo_ext).png"
   }
   ls src/res/small/*.svg | each { |svg_file|
     let file_name_wo_ext = $svg_file.name | path parse | get stem;
     inkscape --export-png-color-mode=RGBA_8 --export-png-compression=0 -w $small -h $small $"--export-filename=absblack/res/($file_name_wo_ext).png" $svg_file.name
+    log info $"exported src/res/small/($svg_file.name) to absblack/res/($file_name_wo_ext).png"
   }
 }
 

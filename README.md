@@ -17,7 +17,7 @@ The build and installation process is fully scripted with nushell.
 > [!IMPORTANT]
 > Installing a rEFInd theme requires write access to the EFI System Partition (ESP). Ensure that the ESP is mounted before running the installation commands. During installation, you may be prompted for your `sudo` password so the theme can be copied to your rEFInd installation.
 
-```nu
+```nushell
 use toolkit.nu
 toolkit build
 toolkit install
@@ -30,7 +30,7 @@ toolkit install
 
 To remove the theme, run:
 
-```nu
+```nushell
 use toolkit.nu
 toolkit uninstall
 ```

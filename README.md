@@ -35,6 +35,12 @@ use toolkit.nu
 toolkit uninstall
 ```
 
+## Attributions
+
+This theme uses icons from the [Simple Icons](https://simpleicons.org) project (CC0 licensed), along with custom or adapted icons where needed.
+
+See [ATTRIBUTIONS.md](./ATTRIBUTIONS.md) for full details.
+
 ## Trademark Notice
 
 This project includes icons representing various operating systems. Linux distribution names and logos, Windows, macOS, and any other trademarks are the property of their respective trademark owners.

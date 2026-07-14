@@ -1,4 +1,4 @@
-use std log
+use std/log
 
 # Build absblack refind theme by doing:
 export def build [
